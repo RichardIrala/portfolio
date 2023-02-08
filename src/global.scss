@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    --principalFont: "Montserrat", sans-serif;
+}
+
+body {
+    background-color: #100320;
+}
+
+@import "./pages/Home/Home.scss";
+@import "./atoms/Header/Header.scss";
