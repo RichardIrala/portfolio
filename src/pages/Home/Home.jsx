@@ -23,6 +23,18 @@ const Home = () => {
     },
   ]
 
+  const projectsExperience = [
+    {
+      name: "Front-End developer en Xerial",
+      description: [
+        "Fueron 4 meses en los cuáles me desempeñe como desarrollador Front-End Junior en Xerial. Encargado de Traducir diseños a lenguaje de programación, desarrollar la parte visual de las aplicaciones y sitios, optimizar interfaces de usuario, servir de enlace con los diseñadores gráficos para decidir sobre los elementos de UI/UX.",
+        "Utilizamos como tecnologìas principales en el FrontEnd: Next, Sass y React junto con Web3Auth entre lo más destacado.",
+        "Se utilizo atomic design como sistema de diseño de componentes en el Front-End el cuál en gran parte fue construido por mi durante mi tiempo allí."
+      ],
+      image: "assets/experience/logoXerial.png",
+    }
+  ]
+
   function setRenderSectionMyProjects() {
     setRenderSection("my-projects");
   }
@@ -43,6 +55,8 @@ const Home = () => {
       const splittedDescription = description.slice(0, 79) + "...";
       return splittedDescription;
     }
+
+    if (renderSection !== "my-projects") return;
     
     return (
       <div className="home__projectsContainer">
@@ -58,6 +72,29 @@ const Home = () => {
                 <a className="home__greyButton" href="https://www.google.com" target="_blank" rel="noreferrer">código</a>
                 <a className="home__greenButton" href="https://www.google.com" target="_blank" rel="noreferrer">ir a ver</a>
               </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    )
+  }
+
+  function MyExperience() {
+    if (renderSection !== "my-experience") return;
+    return (
+      <div className="home__myExperienceContainer">
+        {projectsExperience?.map((project) => (
+          <div className="home__myExperienceProjectContainer">
+            <div className="home__myExperienceImageContainer">
+              <img className="home__myExperienceImage" src={project.image} alt="project image" />
+            </div>
+            <h2 className="home__myExperienceProjectName">{project.name}</h2>
+            <div className="home__myExperienceDescriptionContainer">
+              {project.description.map((description) => (<p className="home__myExperienceDescription">{description}</p>))}
+            </div>
+            <div className="home__myExperienceButtonsContainer">
+              <button className="home__myExperienceGoToSeeButtonGrey">ir a ver</button>
+              <button className="home__myExperienceGoToSeeButtonGreen">ir a ver 2</button>
             </div>
           </div>
         ))}
@@ -83,6 +120,7 @@ const Home = () => {
             <button className={setMenuOptionClass("my-experience")} onClick={setRenderSectionMyExperience}>mi experiencia</button>
           </div>
           <MyProjects projects={projects}/>
+          <MyExperience/>
         </section>
 
         <footer>
