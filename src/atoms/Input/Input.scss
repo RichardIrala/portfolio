@@ -1,0 +1,14 @@
+.input__input {
+    background-color: #2A2035;
+    border: none;
+    font-size: 18px;
+    font-family: var(--principalFont);
+    line-height: 28px;
+    color: white;
+    padding: 15px 26px;
+    border-radius: 8px;
+    width: 100%;
+    &::placeholder {
+        color: #777272;
+    }
+}

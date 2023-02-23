@@ -10,5 +10,8 @@ body {
     background-color: #100320;
 }
 
-@import "./pages/Home/Home.scss";
 @import "./atoms/Header/Header.scss";
+@import "./atoms/Title/Title.scss";
+@import "./atoms/Input/Input.scss";
+@import "./pages/Home/Home.scss";
+@import "./pages/Contact/Contact.scss";

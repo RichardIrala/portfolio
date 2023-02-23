@@ -1,0 +1,71 @@
+.contact__principalContainer {
+    max-width: 1104px;
+    margin: 0 auto;
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+
+.contact__bannerContainer {
+	width: 1104px;
+	height: 268px;
+}
+
+.contact__banner {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.contact__profilePicture {
+	$profilePictureSize: 200px;
+	width: $profilePictureSize;
+	height: $profilePictureSize;
+	object-fit: cover;
+	object-position: center;
+	border-radius: 50%;
+	margin-left: 80px;
+	// m-top = mit
+	margin-top: -($profilePictureSize/2);
+    margin-bottom: 77px;
+}
+
+.contact__profilePicture:hover {
+	scale: 1.1;
+	border: solid white 2px;
+	cursor: pointer;
+}
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 37px;
+}
+
+.contact__titleForInput {
+    font-family: var(--principalFont);
+    font-weight: 500;
+    color: white;
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.contact__submitButtonContainer {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.contact__submitButton {
+	cursor: pointer;
+	font-size: 20px;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	color: white;
+	font-family: var(--principalFont);
+	background-color: transparent;
+	border-radius: 8px;
+	text-transform: uppercase;
+	padding: 20px 0;
+	width: 312px;
+	border: #0CF569 2px solid;
+}
