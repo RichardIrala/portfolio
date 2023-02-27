@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Footer from "../../atoms/Footer/Footer";
 import Header from "../../atoms/Header/Header";
 
 const Home = () => {
@@ -8,18 +9,23 @@ const Home = () => {
     {
       name: "RETRO GAMES",
       description: "Se trata de una webapp en la que se puede jugar al  wordle, ahorcado, entre otros.",
-      image: "assets/projects/prettyPets.png",
+      image: "assets/projects/retroGames.png",
+      code: "https://github.com/No-Country/S4-10-M-MERN",
+      deploy: "",
     },
     {
       name: "Pretty Pets",
       description: "App e-commerce de Mascotas desarrollada con React Native, Express y MongoDB, este proyecto es una emulacion de 1 mes a travez de No Country. Cuenta con vistas Home, List Products, Detail Products, Cart, Bag Item, Profile, List Orders, Detail Orders, Login and Register.",
       image: "assets/projects/prettyPets2.png",
+      code: "https://github.com/No-Country/s3-06-m-reactnative-node",
+      deploy: "",
     },
     {
       name: "Mascotas perdidas",
       description: "WebApp que se enfoca en la publicación de mascotas perdidas con su última ubicación. Lo ùltimo es para ayudar a su búsqueda. La misma puede ser reportada por otro usuario y entonces te llegara un mensaje al email.",
-      image: "assets/projects/prettyPets2.png",
+      image: "assets/projects/petLost.png",
       code: "https://github.com/RichardIrala/mascotas-perdidas-webapp-m7",
+      deploy: "",
     },
   ]
 
@@ -56,6 +62,16 @@ const Home = () => {
       return splittedDescription;
     }
 
+    function renderDeployButton(project) {
+      if (!project.deploy) return;
+      return <a className="home__greenButton" href={project.deploy} target="_blank" rel="noreferrer">ir a ver</a>
+    }
+
+    function renderCodeButton(project) {
+      if (!project.code) return;
+      return <a className="home__greyButton" href={project.code} target="_blank" rel="noreferrer">código</a>
+    }
+
     if (renderSection !== "my-projects") return;
     
     return (
@@ -69,8 +85,8 @@ const Home = () => {
               <h3 className="home__projectName">{project.name}</h3>
               <p className="home__projectDescription">{splitDescription(project.description)}</p>
               <div className="home__projectButtonsContainer">
-                <a className="home__greyButton" href="https://www.google.com" target="_blank" rel="noreferrer">código</a>
-                <a className="home__greenButton" href="https://www.google.com" target="_blank" rel="noreferrer">ir a ver</a>
+                {renderCodeButton(project)}
+                {renderDeployButton(project)}
               </div>
             </div>
           </div>
@@ -93,8 +109,8 @@ const Home = () => {
               {project.description.map((description) => (<p className="home__myExperienceDescription">{description}</p>))}
             </div>
             <div className="home__myExperienceButtonsContainer">
-              <button className="home__myExperienceGoToSeeButtonGrey">ir a ver</button>
-              <button className="home__myExperienceGoToSeeButtonGreen">ir a ver 2</button>
+              {/* <button className="home__myExperienceGoToSeeButtonGrey">ir a ver</button>
+              <button className="home__myExperienceGoToSeeButtonGreen">ir a ver 2</button> */}
             </div>
           </div>
         ))}
@@ -122,11 +138,8 @@ const Home = () => {
           <MyProjects projects={projects}/>
           <MyExperience/>
         </section>
-
-        <footer>
-          contactos mios...
-        </footer>
       </div>
+      <Footer />
     </div>
   )
 }

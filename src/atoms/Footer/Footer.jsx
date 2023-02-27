@@ -1,16 +1,23 @@
 const Footer = () => {
   return (
-    <footer>
-      <div>
-        seguime en mis redes
-        <div></div>
+    <footer className="footer__footer">
+      <div className="footer__firstDivContainer">
+        <span className="footer__textContent">Encontrame en mis redes</span>
+        <div className="footer__socialMediasContainer">
+          <a href="https://github.com/RichardIrala" target="_blank" rel="noreferrer">
+            <img className="footer__socialMediaImg" src="assets/socialMedias/github.svg" alt="" />
+          </a>
+          <a href="https://www.linkedin.com/in/richardirala/" target="_blank" rel="noreferrer">
+            <img className="footer__socialMediaImg"  src="assets/socialMedias/linkedin.svg" alt="" />
+          </a>
+        </div>
       </div>
       <div>
-        <a href="">sobre mi</a>
+        <a className="footer__hyperlink" href="">Sobre mi</a>
       </div>
-      <div>
-        ¿Querés contactar conmigo?
-        <a href="/contact">Haz click aqui</a>
+      <div className="footer__contactContainer">
+        <span className="footer__textContent">¿Querés contactar conmigo?</span>
+        <a className="footer__hyperlink" href="/contact">Haz click aqui</a>
       </div>
     </footer>
   )
