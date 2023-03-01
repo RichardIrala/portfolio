@@ -1,5 +1,5 @@
 function path(route) {
-  return "http://localhost:3000/api/" + route;
+  return "https://personal-backend-kappa.vercel.app/api/" + route;
 }
 
 const api = {
