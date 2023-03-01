@@ -14,6 +14,10 @@ body {
 @import "./atoms/Title/Title.scss";
 @import "./atoms/Input/Input.scss";
 @import "./atoms/Footer/Footer.scss";
+@import "./atoms/ErrorText/ErrorText.scss";
+@import "./atoms/Textarea/Textarea.scss";
+@import "./molecules/LabelWithInput/LabelWithInput.scss";
+@import "./molecules/LabelWithTextarea/LabelWithTextarea.scss";
 @import "./pages/Home/Home.scss";
 @import "./pages/Contact/Contact.scss";
 @import "./pages/AboutMe/AboutMe.scss";
