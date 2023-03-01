@@ -32,12 +32,12 @@
 
 .home__profilePicture:hover {
 	scale: 1.1;
-	border: solid white 2px;
+	border: solid #F5F5DC 2px;
 	cursor: pointer;
 }
 
 .home__presentationTitle {
-	color: white;
+	color: #F5F5DC;
 	text-transform: uppercase;
 	font-size: 50px;
 	font-family: var(--principalFont);
@@ -52,7 +52,7 @@
 	gap: 40px;
 	&--option {
 		background-color: #4A7D9A;
-		color: white;
+		color: #F5F5DC;
 		letter-spacing: 0.02em;
 		font-family: var(--principalFont);
 		font-weight: 600;
@@ -114,7 +114,7 @@
 	font-size: 24px;
 	font-weight: 600;
 	font-family: var(--principalFont);
-	color: white;
+	color: #F5F5DC;
 	line-height: 28px;
 	text-transform: uppercase;
 	text-align: center;
@@ -124,7 +124,7 @@
 	font-size: 16px;
 	font-weight: 600;
 	font-family: var(--principalFont);
-	color: white;
+	color: #F5F5DC;
 	line-height: 22px;
 	text-align: justify;
 	margin-bottom: 30px;
@@ -156,11 +156,12 @@
 }
 
 .home__greyButton {
-	border: 2px solid #CBCBCB;;
+	border: 2px solid #CBCBCB;
 }
 
 .home__greenButton {
 	border: 2px solid #0CF569;
+	margin-left: auto;
 }
 
 // MyExperience styles
@@ -201,7 +202,7 @@
 }
 
 .home__myExperienceProjectName {
-	color: white;
+	color: #F5F5DC;
 	font-size: 32px;
 	font-weight: 600;
 	line-height: 28px;
@@ -216,7 +217,7 @@
 
 .home__myExperienceDescription {
 	font-family: var(--principalFont);
-	color: white;
+	color: #F5F5DC;
 	font-weight: 600;
 	font-size: 20px;
 	line-height: 28px;
@@ -236,7 +237,7 @@
 	font-size: 20px;
 	font-weight: 600;
 	letter-spacing: 0.02em;
-	color: white;
+	color: #F5F5DC;
 	font-family: var(--principalFont);
 	background-color: transparent;
 	border-radius: 8px;
