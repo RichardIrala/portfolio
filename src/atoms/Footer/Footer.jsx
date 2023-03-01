@@ -13,7 +13,7 @@ const Footer = () => {
         </div>
       </div>
       <div>
-        <a className="footer__hyperlink" href="">Sobre mi</a>
+        <a className="footer__hyperlink" href="/about-me">Sobre mi</a>
       </div>
       <div className="footer__contactContainer">
         <span className="footer__textContent">¿Querés contactar conmigo?</span>
