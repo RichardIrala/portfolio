@@ -12,4 +12,8 @@
   &::placeholder {
       color: #777272;
   }
+  &:-webkit-autofill {
+    box-shadow: 0 0 0 1000px #2A2035 inset;
+    -webkit-text-fill-color: white;
+  }
 }

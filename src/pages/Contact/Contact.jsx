@@ -36,16 +36,19 @@ const Contact = () => {
 
   async function handleSubmit(event) {
     event.preventDefault();
+    var validEmail;
 
     setLoading(true);
     try {
-      if (!(email && fullname && message && validateEmail())) {
-        setErrors({
-          message: !message,
-          email: !email,
-          fullname: !fullname
-        })
-      } else {
+      setErrors({
+        message: !message,
+        email: !email,
+        fullname: !fullname
+      })
+      if (email) {
+        validEmail = validateEmail();
+      }
+      if (email && fullname && message && validEmail) {
         const resjson = await api.sendMessage({ email, fullname, message });
         setMessageSended(true);
       }
@@ -54,6 +57,56 @@ const Contact = () => {
       alert("Hubo un error al enviar tu mensaje :c")
     }
     setLoading(false);
+  }
+
+  function renderModal() {
+    if (!messageSended) return;
+    return (
+      <div className="contact__modal">
+        <img className="contact__modal__image" src="assets/person.png" alt="Person image" />
+        <span className="contact__modal__title">Tu mensaje ha sido enviado!</span>
+        <span className="contact__modal__generalText">Gracias por el interés. Nos pondremos en contacto pronto.</span>
+        <a href="/" className="contact__modal__button">volver al inicio</a>
+      </div>
+    )
+  }
+
+  function renderForm() {
+    if (messageSended) return;
+    return (
+      <form className="contact__form" onSubmit={handleSubmit}>
+        <Title>contacto</Title>
+        <LabelWithInput
+          title="Nombre completo"
+          name="fullname"
+          type="text"
+          placeholder="Ej: Fulano Goméz"
+          onChange={onChangeFullname}
+          error={errors.fullname ? "Este campo es obligatorio" : ""}
+        />
+        <LabelWithInput
+          title="Email"
+          name="email"
+          type="email"
+          placeholder="Ingrese su email"
+          onChange={onChangeEmail}
+          error={errors.email ? "Este campo es obligatorio" : ""}
+        />
+        <LabelWithTextarea
+          title="Mensaje"
+          name="message"
+          type="text"
+          placeholder="Ingrese el mensaje que quiera enviarme. Un saludo!"
+          onChange={onChangeMessage}
+          error={errors.message ? "Este campo es obligatorio" : ""}
+        />
+        <div className="contact__submitButtonContainer">
+          <button className="contact__submitButton">
+            {!loading ? "enviar" : "Cargando..."}
+          </button>
+        </div>
+      </form>
+    );
   }
 
   return (
@@ -67,36 +120,8 @@ const Contact = () => {
           <img className="contact__profilePicture" src="assets/profile.jpg" alt="Mi foto" onClick={() => { window.open("https://www.linkedin.com/in/richardirala/") }}/>
         </main>
 
-        <form className="contact__form"  onSubmit={handleSubmit}>
-          <Title>contacto</Title>
-          <LabelWithInput
-            title="Nombre completo"
-            name="fullname"
-            type="text"
-            placeholder="Ej: Fulano Goméz"
-            onChange={onChangeFullname}
-            error={errors.fullname ? "Este campo es obligatorio" : ""}
-          />
-          <LabelWithInput
-            title="Email"
-            name="email"
-            type="email"
-            placeholder="Ingrese su email"
-            onChange={onChangeEmail}
-            error={errors.email ? "Este campo es obligatorio" : ""}
-          />
-          <LabelWithTextarea
-            title="Mensaje"
-            name="message"
-            type="text"
-            placeholder="Ingrese el mensaje que quiera enviarme. Un saludo!"
-            onChange={onChangeMessage}
-            error={errors.message ? "Este campo es obligatorio" : ""}
-          />
-          <div className="contact__submitButtonContainer">
-            <button className="contact__submitButton">{!loading ? "enviar" : "Cargando..."}</button>
-          </div>
-        </form>
+        {renderForm()}
+        {renderModal()}
       </div>
       <Footer />
     </>
