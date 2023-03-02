@@ -59,6 +59,18 @@ const Contact = () => {
     setLoading(false);
   }
 
+  function renderModal() {
+    if (!messageSended) return;
+    return (
+      <div className="contact__modal">
+        <img className="contact__modal__image" src="assets/person.png" alt="Person image" />
+        <span className="contact__modal__title">Tu mensaje ha sido enviado!</span>
+        <span className="contact__modal__generalText">Gracias por el interés. Nos pondremos en contacto pronto.</span>
+        <a href="/" className="contact__modal__button">volver al inicio</a>
+      </div>
+    )
+  }
+
   function renderForm() {
     if (messageSended) return;
     return (
@@ -109,6 +121,7 @@ const Contact = () => {
         </main>
 
         {renderForm()}
+        {renderModal()}
       </div>
       <Footer />
     </>
