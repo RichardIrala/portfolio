@@ -114,10 +114,10 @@ const Contact = () => {
       <Header />
       <div className="contact__principalContainer">
         <main>
-          <div className="contact__bannerContainer">
-            <img className="contact__banner" src="assets/banner.png" alt="Banner" />
+          <div className="global-styles__main__bannerContainer">
+            <img className="global-styles__main__banner" src="assets/banner.png" alt="Banner" />
           </div>
-          <img className="contact__profilePicture" src="assets/profile.jpg" alt="Mi foto" onClick={() => { window.open("https://www.linkedin.com/in/richardirala/") }}/>
+          <img className="global-styles__main__profilePicture" src="assets/profile.jpg" alt="Mi foto" onClick={() => { window.open("https://www.linkedin.com/in/richardirala/") }}/>
         </main>
 
         {renderForm()}

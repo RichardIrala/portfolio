@@ -65,14 +65,14 @@ const Home = () => {
     if (renderSection !== "my-experience") return;
     return (
       <div className="home__myExperienceContainer">
-        {projectsExperience?.map((project) => (
-          <div className="home__myExperienceProjectContainer">
+        {projectsExperience?.map((project, index) => (
+          <div key={index} className="home__myExperienceProjectContainer">
             <div className="home__myExperienceImageContainer">
               <img className="home__myExperienceImage" src={project.image} alt="project image" />
             </div>
             <h2 className="home__myExperienceProjectName">{project.name}</h2>
             <div className="home__myExperienceDescriptionContainer">
-              {project.description.map((description) => (<p className="home__myExperienceDescription">{description}</p>))}
+              {project.description.map((description, index) => (<p key={index} className="home__myExperienceDescription">{description}</p>))}
             </div>
             <div className="home__myExperienceButtonsContainer">
               {/* <button className="home__myExperienceGoToSeeButtonGrey">ir a ver</button>
@@ -89,11 +89,11 @@ const Home = () => {
       <Header />
       <div className="home__principalContainer">
         <main>
-          <div className="home__bannerContainer">
-            <img className="home__banner" src="assets/banner.png" alt="Banner" />
+          <div className="global-styles__main__bannerContainer">
+            <img className="global-styles__main__banner" src="assets/banner.png" alt="Banner" />
           </div>
-          <img className="home__profilePicture" src="assets/profile.jpg" alt="Mi foto" onClick={() => { window.open("https://www.linkedin.com/in/richardirala/") }}/>
-          <h1 className="home__presentationTitle">Hola, soy Richard, <br /> desarrollador web FrontEnd</h1>
+          <img className="global-styles__main__profilePicture" src="assets/profile.jpg" alt="Mi foto" onClick={() => { window.open("https://www.linkedin.com/in/richardirala/") }}/>
+          <h1 className="global-styles__main__presentationTitle">Hola, soy Richard, <br /> desarrollador web FrontEnd</h1>
         </main>
 
         <section>

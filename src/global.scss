@@ -10,6 +10,7 @@ body {
     background-color: #100320;
 }
 
+@import "./globalStyles.scss";
 @import "./atoms/Header/Header.scss";
 @import "./atoms/Title/Title.scss";
 @import "./atoms/Input/Input.scss";
