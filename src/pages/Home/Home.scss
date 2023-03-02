@@ -4,44 +4,10 @@
 	margin: 0 auto;
 	padding-top: 80px;
 	padding-bottom: 100px;
-}
-
-.home__bannerContainer {
-	width: 1104px;
-	height: 268px;
-}
-
-.home__banner {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	object-position: center;
-}
-
-.home__profilePicture {
-	$profilePictureSize: 200px;
-	width: $profilePictureSize;
-	height: $profilePictureSize;
-	object-fit: cover;
-	object-position: center;
-	border-radius: 50%;
-	margin-left: 80px;
-	// m-top = mit
-	margin-top: -($profilePictureSize/2);
-}
-
-.home__profilePicture:hover {
-	scale: 1.1;
-	border: solid #F5F5DC 2px;
-	cursor: pointer;
-}
-
-.home__presentationTitle {
-	color: #F5F5DC;
-	text-transform: uppercase;
-	font-size: 50px;
-	font-family: var(--principalFont);
-	font-weight: 600;
+	@media (max-width: 1150px) {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
 }
 
 .home__menu {
@@ -62,9 +28,20 @@
 		padding: 8px 0;
 		border-radius: 12px;
 		cursor: pointer;
+		@media (max-width: 800px) {
+			font-size: 16px;
+			width: 300px;
+		}
+		@media (max-width: 500px) {
+			font-size: 16px;
+			width: 200px;
+		}
 	}
 	&--optionRose {
 		background-color: #FF47FF;
+	}
+	@media (max-width: 500px) {
+		gap: 25px;
 	}
 }
 
@@ -73,6 +50,12 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 150px;
+	@media (max-width: 900px) {
+		gap: 100px;
+	}
+	@media (max-width: 500px) {
+		gap: 50px;
+	}
 }
 
 .home__projectContainer {
@@ -85,12 +68,21 @@
 	display: flex;
 	flex-direction: column;
 	padding-bottom: 55px;
+	@media (max-width: 500px) {
+		width: 400px;
+		min-width: 400px;
+		height: 450px;
+		padding-bottom: 30px;
+	}
 }
 
 .home__projectImageContainer {
 	display: flex;
 	justify-content: center;
 	margin-bottom: 25px;
+	@media (max-width: 500px) {
+
+	}
 }
 
 .home__projectImage {
@@ -100,6 +92,10 @@
 	object-position: center;
 	background-color: #000000;
 	border-radius: 16px;
+	@media (max-width: 500px) {
+		width: 350px;
+		height: 188px;
+	}
 }
 
 .home__projectInfoContainer {
@@ -119,6 +115,10 @@
 	text-transform: uppercase;
 	text-align: center;
 	margin-bottom: 30px;
+	@media (max-width: 500px) {
+		font-size: 20px;
+		margin-bottom: 15px;
+	}
 }
 .home__projectDescription {
 	font-size: 16px;
@@ -128,6 +128,10 @@
 	line-height: 22px;
 	text-align: justify;
 	margin-bottom: 30px;
+	@media (max-width: 500px) {
+		font-size: 14px;
+		margin-bottom: 15px;
+	}
 }
 
 .home__projectButtonsContainer {
@@ -135,6 +139,10 @@
 	display: flex;
 	gap: 35px;
 	justify-content: space-between;
+	align-items: end;
+	@media (max-width: 500px) {
+		gap: 20px;
+	}
 }
 
 .home__greyButton, .home__greenButton {
@@ -153,6 +161,12 @@
 	justify-content: center;
 	align-items: center;
 	text-decoration: none;
+	height: 50px;
+	@media (max-width: 500px) {
+		font-size: 16px;
+		width: 130px;
+		height: 50px;
+	}
 }
 
 .home__greyButton {
@@ -184,6 +198,19 @@
 	padding-bottom: 67px;
 	display: flex;
 	flex-direction: column;
+	@media (max-width: 750px) {
+		width: 500px;
+		height: auto;
+	}
+	@media (max-width: 600px) {
+		width: 450px;
+		height: auto;
+	}
+	@media (max-width: 500px) {
+		width: 380px;
+		height: auto;
+		padding-bottom: 40px;
+	}
 }
 
 .home__myExperienceImageContainer {
@@ -199,6 +226,10 @@
 	border-radius: 16px;
 	object-fit: cover;
 	object-position: center;
+	@media (max-width: 750px) {
+		width: 300px;
+		height: 161px;
+	}
 }
 
 .home__myExperienceProjectName {
@@ -207,13 +238,14 @@
 	font-weight: 600;
 	line-height: 28px;
 	font-family: var(--principalFont);
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 	text-align: center;
+	@media (max-width: 500px) {
+		font-size: 26px;
+	}
 }
 
-.home__myExperienceDescriptionContainer {
-
-}
+// .home__myExperienceDescriptionContainer {}
 
 .home__myExperienceDescription {
 	font-family: var(--principalFont);
@@ -222,6 +254,13 @@
 	font-size: 20px;
 	line-height: 28px;
 	margin-bottom: 14px;
+	@media (max-width: 600px) {
+		font-size: 18px;
+	}
+	@media (max-width: 500px) {
+		font-size: 16px;
+		line-height: 24px;
+	}
 }
 
 .home__myExperienceButtonsContainer {

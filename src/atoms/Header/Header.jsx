@@ -1,15 +1,17 @@
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <header className="header__header">
       <div className="header__principalContainer">
-        <a href="/" className="header__homeIconContainer">
+        <Link to="/" className="header__homeIconContainer">
           <img
             className="header__homeIcon"
             src="assets/header/home-icon.svg"
             alt="home icon"
           />
           <span className="header__generalText">Ir al inicio</span>
-        </a>
+        </Link>
         <a className="header__downloadIconContainer" href="Richard-Irala-CV.pdf" download>
           <span className="header__generalText">Descargar Curriculum</span>
           <img
