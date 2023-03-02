@@ -1,45 +1,11 @@
 import { useState } from "react";
 import Footer from "../../atoms/Footer/Footer";
 import Header from "../../atoms/Header/Header";
+import projects from "./projects";
+import projectsExperience from "./projectsExperience";
 
 const Home = () => {
   const [renderSection, setRenderSection] = useState("my-projects");
-
-  const projects = [
-    {
-      name: "RETRO GAMES",
-      description: "Se trata de una webapp en la que se puede jugar al  wordle, ahorcado, entre otros.",
-      image: "assets/projects/retroGames.png",
-      code: "https://github.com/No-Country/S4-10-M-MERN",
-      deploy: "",
-    },
-    {
-      name: "Pretty Pets",
-      description: "App e-commerce de Mascotas desarrollada con React Native, Express y MongoDB, este proyecto es una emulacion de 1 mes a travez de No Country. Cuenta con vistas Home, List Products, Detail Products, Cart, Bag Item, Profile, List Orders, Detail Orders, Login and Register.",
-      image: "assets/projects/prettyPets2.png",
-      code: "https://github.com/No-Country/s3-06-m-reactnative-node",
-      deploy: "",
-    },
-    {
-      name: "Mascotas perdidas",
-      description: "WebApp que se enfoca en la publicación de mascotas perdidas con su última ubicación. Lo ùltimo es para ayudar a su búsqueda. La misma puede ser reportada por otro usuario y entonces te llegara un mensaje al email.",
-      image: "assets/projects/petLost.png",
-      code: "https://github.com/RichardIrala/mascotas-perdidas-webapp-m7",
-      deploy: "",
-    },
-  ]
-
-  const projectsExperience = [
-    {
-      name: "Front-End developer en Xerial",
-      description: [
-        "Fueron 4 meses en los cuáles me desempeñe como desarrollador Front-End Junior en Xerial. Encargado de Traducir diseños a lenguaje de programación, desarrollar la parte visual de las aplicaciones y sitios, optimizar interfaces de usuario, servir de enlace con los diseñadores gráficos para decidir sobre los elementos de UI/UX.",
-        "Utilizamos como tecnologìas principales en el FrontEnd: Next, Sass y React junto con Web3Auth entre lo más destacado.",
-        "Se utilizo atomic design como sistema de diseño de componentes en el Front-End el cuál en gran parte fue construido por mi durante mi tiempo allí."
-      ],
-      image: "assets/experience/logoXerial.png",
-    }
-  ]
 
   function setRenderSectionMyProjects() {
     setRenderSection("my-projects");
@@ -64,7 +30,7 @@ const Home = () => {
 
     function renderDeployButton(project) {
       if (!project.deploy) return;
-      return <a className="home__greenButton" href={project.deploy} target="_blank" rel="noreferrer">ir a ver</a>
+      return <a className="home__greenButton" href={project.deploy} target="_blank" rel="noreferrer">demo</a>
     }
 
     function renderCodeButton(project) {
