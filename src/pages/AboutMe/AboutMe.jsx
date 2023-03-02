@@ -21,7 +21,7 @@ const AboutMe = () => {
             <br/>
             Bastante familiarizado con JavaScript, Next, React, lectura de figma, GitHub, Git y gestores de tarea como Jira, Trello, Monday, Asana, etc. 
             <br/>
-            Me caracterizo por ser alguien bastante proactivo y autodidacta. Hice un curso durante casi 2 años de programación fullstack y de ahí me enfoque a lo que es FrontEnd. Tengo el agrado de contar con experiencias tanto laborales pagas y otras más en las cuáles tuve el placer de trabajar con distintos desarrolladores con los cuáles mejore mis habilidades técnicas y blandas.
+            Me caracterizo por ser alguien bastante proactivo y autodidacta. Hice un curso durante casi 2 años de programación fullstack y de ahí me enfoque a lo que es FrontEnd. Tengo el agrado de contar con experiencias tanto laborales pagas y otras más en las cuáles tuve el placer de trabajar con distintos desarrolladores con los cuáles mejore mis habilidades técnicas y blandas. En su totalidad darían un total de experiencia de +8 meses.
             <br/>
             Acostumbrado a estar comunicado con el equipo gracias a lo anterior y apasionado por la industria IT.
             <br/>
