@@ -1,0 +1,39 @@
+.langswitcher__button {
+	margin-top: 80px;
+	margin-bottom: 80px;
+	display: flex;
+	justify-content: center;
+	gap: 40px;
+
+	&--option {
+		background-color: #4A7D9A;
+		color: #F5F5DC;
+		letter-spacing: 0.02em;
+		font-family: var(--principalFont);
+		font-weight: 600;
+		font-size: 18px;
+		text-transform: uppercase;
+		width: 352px;
+		padding: 8px 0;
+		border-radius: 12px;
+		cursor: pointer;
+
+		@media (max-width: 800px) {
+			font-size: 16px;
+			width: 300px;
+		}
+
+		@media (max-width: 500px) {
+			font-size: 16px;
+			width: 200px;
+		}
+	}
+
+	&--optionRose {
+		background-color: #FF47FF;
+	}
+
+	@media (max-width: 500px) {
+		gap: 25px;
+	}
+}

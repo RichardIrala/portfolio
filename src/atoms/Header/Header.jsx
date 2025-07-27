@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import LangSwitcher from "../LangSwitcher/LangSwitcher";
 
 const Header = () => {
   return (
@@ -10,7 +11,7 @@ const Header = () => {
             src="assets/header/home-icon.svg"
             alt="home icon"
           />
-          <span className="header__generalText">Ir al inicio</span>
+          <span className="header__generalText">Home</span>
         </Link>
         {/* <a className="header__downloadIconContainer" href="Richard-Irala-CV.pdf" download>
           <span className="header__generalText">Descargar Curriculum</span>
@@ -20,6 +21,7 @@ const Header = () => {
             alt="Download icon"
           />
         </a> */}
+        <LangSwitcher />
       </div>
     </header>
   );
