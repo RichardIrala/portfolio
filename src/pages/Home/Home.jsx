@@ -57,7 +57,7 @@ const Home = () => {
           target="_blank"
           rel="noreferrer"
         >
-          código
+          {lang === "en" ? "source" : "código"}
         </a>
       );
     }
