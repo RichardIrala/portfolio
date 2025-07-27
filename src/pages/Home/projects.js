@@ -10,10 +10,9 @@ const projects = [
   {
     name: "RETRO GAMES",
     description:
-      "BACKEND APAGADO. Se trata de una webapp en la que se puede jugar al  wordle, ahorcado, entre otros.",
+      "Se trata de una webapp en la que se puede jugar al  wordle, ahorcado, entre otros.",
     image: "assets/projects/retroGames.png",
     code: "https://github.com/No-Country/S4-10-M-MERN",
-    deploy: "https://s4-10-mern-frontend.vercel.app/",
   },
   {
     name: "Pretty Pets",
@@ -26,7 +25,7 @@ const projects = [
   {
     name: "Mascotas perdidas",
     description:
-      "BACKEND APAGADO. WebApp que se enfoca en la publicación de mascotas perdidas con su última ubicación. Lo ùltimo es para ayudar a su búsqueda. La misma puede ser reportada por otro usuario y entonces te llegara un mensaje al email.",
+      "WebApp que se enfoca en la publicación de mascotas perdidas con su última ubicación. Lo ùltimo es para ayudar a su búsqueda. La misma puede ser reportada por otro usuario y entonces te llegara un mensaje al email.",
     image: "assets/projects/petLost.png",
     code: "https://github.com/RichardIrala/mascotas-perdidas-webapp-m7",
     deploy: "https://webapp-mascotas-perdidas-react.web.app/",
@@ -61,7 +60,7 @@ const projects = [
       "Se trata de un buscador de productos en mercado libre. Simple y con ese único objetivo.",
     image: "assets/projects/mlSeeker.png",
     code: "https://github.com/RichardIrala/css-modules-webpack-and-mercadolibre",
-    deploy: "https://dwf-m8-ml-buscador.web.app/",
+    // deploy: "https://dwf-m8-ml-buscador.web.app/",
   },
   {
     name: "To Do app",

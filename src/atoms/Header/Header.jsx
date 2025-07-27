@@ -12,14 +12,14 @@ const Header = () => {
           />
           <span className="header__generalText">Ir al inicio</span>
         </Link>
-        <a className="header__downloadIconContainer" href="Richard-Irala-CV.pdf" download>
+        {/* <a className="header__downloadIconContainer" href="Richard-Irala-CV.pdf" download>
           <span className="header__generalText">Descargar Curriculum</span>
           <img
             className="header__downloadIcon"
             src="assets/header/download-icon.svg"
             alt="Download icon"
           />
-        </a>
+        </a> */}
       </div>
     </header>
   );

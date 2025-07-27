@@ -1,10 +1,16 @@
 const projectsExperience = [
   {
+    name: "Actualidad - Ingeniero de Software Mid-Level en Sequence",
+    description: [
+      "Ingeniero de Software Mid-Level enfocado en el desarrollo front-end, documentación y en integraciones con blockchain EVM.",
+    ],
+    image: "assets/experience/logoSequence.jpg",
+  },
+  {
     name: "Front-End developer en Xerial",
     description: [
-      "Fueron 4 meses en los cuáles me desempeñe como desarrollador Front-End Junior en Xerial. Encargado de Traducir diseños a lenguaje de programación, desarrollar la parte visual de las aplicaciones y sitios, optimizar interfaces de usuario, servir de enlace con los diseñadores gráficos para decidir sobre los elementos de UI/UX.",
-      "Utilizamos como tecnologìas principales en el FrontEnd: Next, Sass y React junto con Web3Auth entre lo más destacado.",
-      "Se utilizo atomic design como sistema de diseño de componentes en el Front-End el cuál en gran parte fue construido por mi durante mi tiempo allí.",
+      "Estuve casi 2 años como Front-End Developer Junior en Xerial. Me dediqué al desarrollo front-end, tomando decisiones sobre la viabilidad de diseños en Figma e implementándolos con buenas prácticas de código. Una parte importante del trabajo fue el desarrollo de interfaces para aplicaciones basadas en blockchain (EVM), trabajando en conjunto con el equipo de diseño y desarrollo.",
+      "Utilizamos como tecnologías principales en el FrontEnd: Next, Sass y React junto con Web3Auth entre lo más destacado.",
     ],
     image: "assets/experience/logoXerial.png",
   },
