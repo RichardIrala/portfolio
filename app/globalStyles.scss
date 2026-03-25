@@ -1,3 +1,18 @@
+@use "sass:math";
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    --principalFont: "Montserrat", sans-serif;
+    border: none;
+}
+
+body {
+    background-color: #100320;
+}
+
 .global-styles__main__bannerContainer {
 	width: 1104px;
 	height: 268px;
@@ -37,23 +52,23 @@
 	border-radius: 50%;
 	margin-left: 80px;
 	// m-top = mit
-	margin-top: -($profilePictureSize/2);
+	margin-top: - math.div($profilePictureSize, 2);
 	@media (max-width: 1150px) {
 		width: $profilePictureSize1150;
 		height: $profilePictureSize1150;
-		margin-top: -($profilePictureSize1150/2);
+		margin-top: - math.div($profilePictureSize1150, 2);
 		margin-left: 60px;
 	}
 	@media (max-width: 900px) {
 		width: $profilePictureSize900;
 		height: $profilePictureSize900;
-		margin-top: -($profilePictureSize900/2);
+		margin-top: - math.div($profilePictureSize900, 2);
 		margin-left: 40px;
 	}
 	@media (max-width: 800px) {
 		width: $profilePictureSize800;
 		height: $profilePictureSize800;
-		margin-top: -($profilePictureSize800/2);
+		margin-top: - math.div($profilePictureSize800, 2);
 		margin-left: 20px;
 	}
 }
