@@ -1,26 +1,13 @@
-* {
-    margin: 0;
-    padding: 0;
-    outline: 0;
-    box-sizing: border-box;
-    --principalFont: "Montserrat", sans-serif;
-    border: none;
-}
-
-body {
-    background-color: #100320;
-}
-
-@import "./globalStyles.scss";
-@import "./atoms/Header/Header.scss";
-@import "./atoms/Title/Title.scss";
-@import "./atoms/Input/Input.scss";
-@import "./atoms/Footer/Footer.scss";
-@import "./atoms/ErrorText/ErrorText.scss";
-@import "./atoms/Textarea/Textarea.scss";
-@import "./atoms/LangSwitcher/LangSwitcher.scss";
-@import "./molecules/LabelWithInput/LabelWithInput.scss";
-@import "./molecules/LabelWithTextarea/LabelWithTextarea.scss";
-@import "./pages/Home/Home.scss";
-@import "./pages/Contact/Contact.scss";
-@import "./pages/AboutMe/AboutMe.scss";
+@use "./globalStyles";
+@use "./atoms/Header/Header";
+@use "./atoms/Title/Title";
+@use "./atoms/Input/Input";
+@use "./atoms/Footer/Footer";
+@use "./atoms/ErrorText/ErrorText";
+@use "./atoms/Textarea/Textarea";
+@use "./atoms/LangSwitcher/LangSwitcher";
+@use "./molecules/LabelWithInput/LabelWithInput";
+@use "./molecules/LabelWithTextarea/LabelWithTextarea";
+@use "./pages/Home/Home";
+@use "./pages/Contact/Contact";
+@use "./pages/AboutMe/AboutMe";
