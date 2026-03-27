@@ -33,12 +33,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-       <LanguageProvider>
-      <body>
-        {children}
-        <ScrollRestoration />
-        <Scripts />
-      </body></LanguageProvider>
+      <LanguageProvider>
+        <body>
+          {children}
+          <ScrollRestoration />
+          <Scripts />
+        </body>
+      </LanguageProvider>
     </html>
   );
 }
