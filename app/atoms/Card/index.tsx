@@ -10,7 +10,7 @@ interface CardProps {
 export const Card = ({ project, lang }: CardProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
-	useEffect(() => {
+  useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
     } else {
@@ -29,59 +29,59 @@ export const Card = ({ project, lang }: CardProps) => {
   }
 
   return (
-    <div key={Math.random()} className="home__projectContainer">
-      <div className="home__projectImageContainer">
+    <div key={Math.random()} className="card__projectContainer">
+      <div className="card__projectImageContainer">
         <img
-          className="home__projectImage"
+          className="card__projectImage"
           src={project.image}
           alt="Project image"
         />
       </div>
-      <div className="home__projectInfoContainer">
-        <h3 className="home__projectName">{project.name}</h3>
-        <p className="home__projectDescription">
+      <div className="card__projectInfoContainer">
+        <h3 className="card__projectName">{project.name}</h3>
+        <p className="card__projectDescription">
           {splitDescription(project.description)}
         </p>
-        <div className="home__shoreMoreBox">
-          <button className="home__showMore" onClick={() => setIsOpen(true)}>
+        <div className="card__showMoreBox">
+          <button className="card__showMore" onClick={() => setIsOpen(true)}>
             {lang === "en" ? "Show more" : "Ver más"}
           </button>
         </div>
         {isOpen && (
-          <div className="home__overlay" onClick={() => setIsOpen(false)}>
+          <div className="card__overlay" onClick={() => setIsOpen(false)}>
             <div
-              className="home__projectContainer home__overlayProjectContainer"
+              className="card__projectContainer card__overlayProjectContainer"
               onClick={(e) => e.stopPropagation()}
             >
               <button
-                className="home__overlayCloseBtn"
+                className="card__overlayCloseBtn"
                 onClick={() => setIsOpen(false)}
               >
                 X
               </button>
-              <div className="home__projectImageContainer">
+              <div className="card__projectImageContainer">
                 <img
-                  className="home__projectImage"
+                  className="card__projectImage"
                   src={project.image}
                   alt="Project image"
                 />
               </div>
-              <div className="home__projectInfoContainer">
-                <h3 className="home__projectName">{project.name}</h3>
-                <p className="home__projectDescription home__mb30">
+              <div className="card__projectInfoContainer">
+                <h3 className="card__projectName">{project.name}</h3>
+                <p className="card__projectDescription card__mb30">
                   {project.description}
                 </p>
-                <div className="home__projectButtonsContainer">
-									<ButtonCTA lang={lang} project={project} type={"code"}/>
-									<ButtonCTA lang={lang} project={project} type={"demo"}/>
+                <div className="card__projectButtonsContainer">
+                  <ButtonCTA lang={lang} project={project} type={"code"} />
+                  <ButtonCTA lang={lang} project={project} type={"demo"} />
                 </div>
               </div>
             </div>
           </div>
         )}
-        <div className="home__projectButtonsContainer">
-          <ButtonCTA lang={lang} project={project} type={"code"}/>
-					<ButtonCTA lang={lang} project={project} type={"demo"}/>
+        <div className="card__projectButtonsContainer">
+          <ButtonCTA lang={lang} project={project} type={"code"} />
+          <ButtonCTA lang={lang} project={project} type={"demo"} />
         </div>
       </div>
     </div>
