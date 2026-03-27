@@ -36,7 +36,8 @@
       "underscore": "^1.13.8",
       "webpack-dev-server": "^5.2.1",
       "postcss": "^8.4.31",
-      "@tootallnate/once": "^3.0.1"
+      "@tootallnate/once": "^3.0.1",
+      "picomatch": ">=4.0.4"
     }
   },
   "devDependencies": {

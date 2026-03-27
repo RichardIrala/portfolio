@@ -6,7 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
-import { LanguageProvider } from "~/context/LanguageContext";
+import { LanguageProvider } from "./context/LanguageContext";
 import type { Route } from "./+types/root";
 import "./app.css";
 import "./global.scss"
