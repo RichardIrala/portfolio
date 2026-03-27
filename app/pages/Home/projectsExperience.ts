@@ -1,4 +1,15 @@
-const projectsExperience = {
+interface ProjectExperience {
+  es: ExperienceItem[];
+  en: ExperienceItem[];
+}
+
+interface ExperienceItem {
+  name: string;
+  description: string[];
+  image: string;
+}
+
+const projectsExperience: ProjectExperience = {
   es: [
     {
       name: "Actualidad - Ingeniero de Software Mid-Level en Sequence",

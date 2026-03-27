@@ -3,7 +3,9 @@ import Footer from "../../atoms/Footer/Footer";
 import Header from "../../atoms/Header/Header";
 import allProjects from "./projects";
 import allProjectsExperience from "./projectsExperience";
-import { useLanguage } from "../../context/LanguageContext";
+import { useLanguage } from "~/context/LanguageContext";
+import { Card } from "~/atoms/Card";
+import type { Project } from "~/types";
 
 const Home = () => {
   const { lang } = useLanguage();
@@ -21,71 +23,21 @@ const Home = () => {
     setRenderSection("my-experience");
   }
 
-  function setMenuOptionClass(active) {
+  function setMenuOptionClass(active: string) {
     const base = "home__menu--option ";
     if (active != renderSection) return base;
     return base + "home__menu--optionRose";
   }
 
-  function MyProjects({ projects }) {
-    function splitDescription(description) {
-      if (description.length < 80) return description;
-      const splittedDescription = description.slice(0, 79) + "...";
-      return splittedDescription;
-    }
-
-    function renderDeployButton(project) {
-      if (!project.deploy) return;
-      return (
-        <a
-          className="home__greenButton"
-          href={project.deploy}
-          target="_blank"
-          rel="noreferrer"
-        >
-          demo
-        </a>
-      );
-    }
-
-    function renderCodeButton(project) {
-      if (!project.code) return;
-      return (
-        <a
-          className="home__greyButton"
-          href={project.code}
-          target="_blank"
-          rel="noreferrer"
-        >
-          {lang === "en" ? "source" : "código"}
-        </a>
-      );
-    }
+  function MyProjects({ projects } : { projects: Project[] }) {
+    
 
     if (renderSection !== "my-projects") return;
 
     return (
       <div className="home__projectsContainer">
-        {projects?.map((project) => (
-          <div key={Math.random()} className="home__projectContainer">
-            <div className="home__projectImageContainer">
-              <img
-                className="home__projectImage"
-                src={project.image}
-                alt="Project image"
-              />
-            </div>
-            <div className="home__projectInfoContainer">
-              <h3 className="home__projectName">{project.name}</h3>
-              <p className="home__projectDescription">
-                {splitDescription(project.description)}
-              </p>
-              <div className="home__projectButtonsContainer">
-                {renderCodeButton(project)}
-                {renderDeployButton(project)}
-              </div>
-            </div>
-          </div>
+        {projects?.map((project: Project) => (
+          <Card key={Math.random()} lang={lang} project={project}/>
         ))}
       </div>
     );
@@ -95,7 +47,7 @@ const Home = () => {
     if (renderSection !== "my-experience") return;
     return (
       <div className="home__myExperienceContainer">
-        {projectsExperience?.map((project, index) => (
+        {projectsExperience?.map((project, index: number) => (
           <div key={index} className="home__myExperienceProjectContainer">
             <div className="home__myExperienceImageContainer">
               <img
