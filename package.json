@@ -21,7 +21,9 @@
     "build": "react-router build",
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
-    "typecheck": "react-router typegen && tsc"
+    "typecheck": "react-router typegen && tsc",
+    "lint:fix": "pnpm eslint . --fix",
+    "lint": "pnpm eslint ."
   },
   "eslintConfig": {
     "extends": [
@@ -41,14 +43,19 @@
     }
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@react-router/dev": "7.12.0",
     "@tailwindcss/vite": "^4.2.1",
     "@types/node": "^22.19.15",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
+    "eslint": "^10.1.0",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^17.4.0",
     "tailwindcss": "^4.2.1",
     "typescript": "^5.9.3",
+    "typescript-eslint": "^8.57.2",
     "vite": "^7.3.1",
     "vite-tsconfig-paths": "^5.1.4"
   }
