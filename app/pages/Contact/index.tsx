@@ -1,50 +1,50 @@
 import { useState } from "react";
-import Footer from "../../atoms/Footer/Footer";
-import Header from "../../atoms/Header/Header";
-import Title from "../../atoms/Title/Title";
+import Footer from "../../atoms/Footer";
+import Header from "../../atoms/Header";
+import Title from "../../atoms/Title";
 import api from "../../helpers/api";
-import LabelWithInput from "../../molecules/LabelWithInput/LabelWithInput";
-import LabelWithTextarea from "../../molecules/LabelWithTextarea/LabelWithTextarea";
+import LabelWithInput from "../../molecules/LabelWithInput";
+import LabelWithTextarea from "../../molecules/LabelWithTextarea";
 
 const Contact = () => {
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<any>({});
   const [messageSended, setMessageSended] = useState(false);
 
-  function onChangeFullname(event) {
+  function onChangeFullname(event: React.ChangeEvent<HTMLInputElement>) {
     setFullname(event.target.value);
   }
-  
-  function onChangeEmail(event) {
+
+  function onChangeEmail(event: React.ChangeEvent<HTMLInputElement>) {
     setEmail(event.target.value);
   }
 
-  function onChangeMessage(event) {
+  function onChangeMessage(event: React.ChangeEvent<HTMLTextAreaElement>) {
     setMessage(event.target.value);
   }
 
   function validateEmail() {
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-      return (true)
+      return true;
     }
-    alert("Ingresaste un email inválido!")
-    return (false)
+    alert("Ingresaste un email inválido!");
+    return false;
   }
 
-  async function handleSubmit(event) {
+  async function handleSubmit(event: React.SubmitEvent) {
     event.preventDefault();
-    var validEmail;
+    let validEmail;
 
     setLoading(true);
     try {
       setErrors({
         message: !message,
         email: !email,
-        fullname: !fullname
-      })
+        fullname: !fullname,
+      });
       if (email) {
         validEmail = validateEmail();
       }
@@ -54,7 +54,7 @@ const Contact = () => {
       }
     } catch (error) {
       // alert(error.message + " error");
-      alert("Hubo un error al enviar tu mensaje :c")
+      alert("Hubo un error al enviar tu mensaje :c");
     }
     setLoading(false);
   }
@@ -63,12 +63,22 @@ const Contact = () => {
     if (!messageSended) return;
     return (
       <div className="contact__modal">
-        <img className="contact__modal__image" src="assets/person.png" alt="Person image" />
-        <span className="contact__modal__title">Tu mensaje ha sido enviado!</span>
-        <span className="contact__modal__generalText">Gracias por el interés. Nos pondremos en contacto pronto.</span>
-        <a href="/" className="contact__modal__button">volver al inicio</a>
+        <img
+          className="contact__modal__image"
+          src="assets/person.png"
+          alt="Person image"
+        />
+        <span className="contact__modal__title">
+          Tu mensaje ha sido enviado!
+        </span>
+        <span className="contact__modal__generalText">
+          Gracias por el interés. Nos pondremos en contacto pronto.
+        </span>
+        <a href="/" className="contact__modal__button">
+          volver al inicio
+        </a>
       </div>
-    )
+    );
   }
 
   function renderForm() {
@@ -115,9 +125,20 @@ const Contact = () => {
       <div className="contact__principalContainer">
         <main>
           <div className="global-styles__main__bannerContainer">
-            <img className="global-styles__main__banner" src="assets/banner.png" alt="Banner" />
+            <img
+              className="global-styles__main__banner"
+              src="assets/banner.png"
+              alt="Banner"
+            />
           </div>
-          <img className="global-styles__main__profilePicture" src="assets/profile.jpg" alt="Mi foto" onClick={() => { window.open("https://www.linkedin.com/in/richardirala/") }}/>
+          <img
+            className="global-styles__main__profilePicture"
+            src="assets/profile.jpg"
+            alt="Mi foto"
+            onClick={() => {
+              window.open("https://www.linkedin.com/in/richardirala/");
+            }}
+          />
         </main>
 
         {renderForm()}
@@ -125,7 +146,7 @@ const Contact = () => {
       </div>
       <Footer />
     </>
-  )
-}
+  );
+};
 
 export default Contact;

@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import LangSwitcher from "../LangSwitcher/LangSwitcher";
+import LangSwitcher from "../LangSwitcher";
 
 const Header = () => {
   return (

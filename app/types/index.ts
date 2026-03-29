@@ -6,5 +6,7 @@ interface Project {
   deploy?: string;
 }
 
+type Lang = "es" | "en";
 
-export type { Project }
+
+export type { Project, Lang }

@@ -1,6 +1,6 @@
-import Footer from "../../atoms/Footer/Footer";
-import Header from "../../atoms/Header/Header";
-import Title from "../../atoms/Title/Title";
+import Footer from "../../atoms/Footer";
+import Header from "../../atoms/Header";
+import Title from "../../atoms/Title";
 import { useLanguage } from "../../context/LanguageContext";
 
 const AboutMe = () => {
