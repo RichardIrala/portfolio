@@ -1,17 +1,17 @@
 import { useState } from "react";
-import Footer from "../../atoms/Footer/Footer";
-import Header from "../../atoms/Header/Header";
+import Footer from "../../atoms/Footer";
+import Header from "../../atoms/Header";
 import allProjects from "./projects";
 import allProjectsExperience from "./projectsExperience";
 import { useLanguage } from "~/context/LanguageContext";
 import { Card } from "~/atoms/Card";
-import type { Project } from "~/types";
+import type { Lang, Project } from "~/types";
 
 const Home = () => {
   const { lang } = useLanguage();
 
-  const projects = allProjects[lang];
-  const projectsExperience = allProjectsExperience[lang];
+  const projects = allProjects[lang as Lang];
+  const projectsExperience = allProjectsExperience[lang as Lang];
 
   const [renderSection, setRenderSection] = useState("my-projects");
 
@@ -29,15 +29,13 @@ const Home = () => {
     return base + "home__menu--optionRose";
   }
 
-  function MyProjects({ projects } : { projects: Project[] }) {
-    
-
+  function MyProjects({ projects }: { projects: Project[] }) {
     if (renderSection !== "my-projects") return;
 
     return (
       <div className="home__projectsContainer">
         {projects?.map((project: Project) => (
-          <Card key={Math.random()} lang={lang} project={project}/>
+          <Card key={Math.random()} lang={lang} project={project} />
         ))}
       </div>
     );

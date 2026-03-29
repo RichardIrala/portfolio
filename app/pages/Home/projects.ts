@@ -1,4 +1,14 @@
-const projects = {
+type Project = {
+  name: string;
+  description: string;
+  image: string;
+  code?: string;
+  deploy?: string;
+};
+
+type Lang = "es" | "en";
+
+const projects: Record<Lang, Project[]> = {
   es: [
     {
       name: "MI PORTFOLIO",
