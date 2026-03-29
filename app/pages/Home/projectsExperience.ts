@@ -12,7 +12,7 @@ interface ExperienceItem {
 const projectsExperience: ProjectExperience = {
   es: [
     {
-      name: "Actualidad - Ingeniero de Software Mid-Level en Sequence",
+      name: "Ingeniero de Software Mid-Level en Sequence",
       description: [
         "2024 - 2026",
         "Ingeniero de Software Mid-Level enfocado en desarrollo frontend, documentación e integraciones con blockchain EVM.",
