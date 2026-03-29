@@ -38,11 +38,11 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="footer__aboutMeContainer">
+      {/* <div className="footer__aboutMeContainer">
         <Link className="footer__hyperlink" to="/about-me">
           {lang === "en" ? "About me" : "Sobre mí"}
         </Link>
-      </div>
+      </div> */}
 
       <div className="footer__contactContainer">
         <span className="footer__textContent">
