@@ -11,6 +11,7 @@
 
 body {
     background-color: #100320;
+	scroll-behavior: smooth;
 }
 
 .global-styles__main__bannerContainer {
@@ -76,10 +77,10 @@ body {
 
 .global-styles__main__presentationTitle {
 	color: #F5F5DC;
-	text-transform: uppercase;
-	font-size: 50px;
+	font-size: 48px;
 	font-family: var(--principalFont);
 	font-weight: 600;
+	line-height: 1.1;
 	@media (max-width: 1150px) {
 		font-size: 40px;
 	}
