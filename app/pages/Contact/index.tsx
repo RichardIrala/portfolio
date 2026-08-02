@@ -6,12 +6,22 @@ import api from "../../helpers/api";
 import LabelWithInput from "../../molecules/LabelWithInput";
 import LabelWithTextarea from "../../molecules/LabelWithTextarea";
 
+type FormErrors = {
+  email: boolean;
+  fullname: boolean;
+  message: boolean;
+};
+
 const Contact = () => {
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
-  const [errors, setErrors] = useState<any>({});
+  const [errors, setErrors] = useState<FormErrors>({
+    email: false,
+    fullname: false,
+    message: false,
+  });
   const [messageSended, setMessageSended] = useState(false);
 
   function onChangeFullname(event: React.ChangeEvent<HTMLInputElement>) {
@@ -27,7 +37,7 @@ const Contact = () => {
   }
 
   function validateEmail() {
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+    if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
       return true;
     }
     alert("Ingresaste un email inválido!");
@@ -36,7 +46,7 @@ const Contact = () => {
 
   async function handleSubmit(event: React.SubmitEvent) {
     event.preventDefault();
-    let validEmail;
+    let validEmail = false;
 
     setLoading(true);
     try {
@@ -49,11 +59,10 @@ const Contact = () => {
         validEmail = validateEmail();
       }
       if (email && fullname && message && validEmail) {
-        const resjson = await api.sendMessage({ email, fullname, message });
+        await api.sendMessage({ email, fullname, message });
         setMessageSended(true);
       }
-    } catch (error) {
-      // alert(error.message + " error");
+    } catch {
       alert("Hubo un error al enviar tu mensaje :c");
     }
     setLoading(false);
@@ -105,7 +114,6 @@ const Contact = () => {
         <LabelWithTextarea
           title="Mensaje"
           name="message"
-          type="text"
           placeholder="Ingrese el mensaje que quiera enviarme. Un saludo!"
           onChange={onChangeMessage}
           error={errors.message ? "Este campo es obligatorio" : ""}

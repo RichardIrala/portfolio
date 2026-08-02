@@ -1,6 +1,5 @@
 interface TextareaProps {
   placeholder: string;
-  type: string;
   name: string;
   onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   className: string;
@@ -8,7 +7,6 @@ interface TextareaProps {
 
 function Textarea({
   placeholder,
-  type,
   name,
   onChange,
   className,
@@ -19,7 +17,6 @@ function Textarea({
     <textarea
       rows={6}
       className={textareaClass}
-      // type={type ?? "text"}
       placeholder={placeholder}
       name={name}
       onChange={onChange}

@@ -39,7 +39,7 @@ const AboutMe = () => {
                 privilege of working with an exceptional team of professionals,
                 in an environment where collaboration and constant communication
                 strengthen and maintain both my technical and soft skills. I
-                always give my best to contribute to the team and the project's
+                always give my best to contribute to the team and the project&apos;s
                 success.
                 <br />
                 <br />
